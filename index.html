@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>nature of code</title>
+		<style>
+			*{
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			button{
+				background-color: #008CBA;
+			    border-color: #007095;
+				color: #FFFFFF;
+				border-radius: 0;
+				border-style: solid;
+				border-width: 0;
+				cursor: pointer;
+				font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+				padding: 4px 8px 4px 8px;
+				font-size: 11px;
+				margin: 5px;
+			}
+			div{
+				position: absolute;
+				right: 0;
+				bottom:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button id="pause">Pause</button><button id="resume">Resume</button>
+		</div>
+		<script src="/lib/vector.js"></script>
+		<script src="/js/randomWalker.js"></script>
+		<script src="/js/ballBouncing.js"></script>
+		<script src="/js/ballFollowsMouse.js"></script>
+		<script src="/js/noc.js"></script>
+		<script>
+			// 
+			nature.beginWith(ballFollowsMouse);
+		</script>
+	</body>
+</html>
