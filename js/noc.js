@@ -3,7 +3,7 @@ var nature = (function () {
 			screen_width: window.innerWidth,
 			screen_height: window.innerHeight,
 			play: true,
-			mouse: {}
+			mouse: []
 		},
 		ctx, matter;
 
@@ -17,7 +17,7 @@ var nature = (function () {
 	};
 
 	var _render = function () {
-		matter.update(ctx);
+		matter.update(ctx, conf.mouse);
 		if(conf.play)
 	    	requestAnimationFrame(_render);
 	};
@@ -27,10 +27,7 @@ var nature = (function () {
 		var resume = document.getElementById('resume');
 
 		document.addEventListener('mousemove', function(e){
-			conf.mouse = {
-				x: e.pageX,
-				y: e.pageY
-			}
+			conf.mouse = [e.pageX, e.pageY];
 		})
 
 		pause.addEventListener('click', function(event) {
@@ -47,11 +44,16 @@ var nature = (function () {
 		matter = obj;
 	}
 
+	var _once = function(){
+		matter.init();
+	}
+
 	var init = function (obj) {
 		_addObjectToNature(obj)
 		_addControls();
 		_createCanvas();
 		_render();
+		_once();
 	};
 
 	return {
