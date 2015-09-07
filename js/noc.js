@@ -5,7 +5,7 @@ var nature = (function () {
 			play: true,
 			mouse: []
 		},
-		ctx, matter;
+		ctx, robot;
 
 	var _createCanvas = function(){
 		var canvas = document.createElement('canvas');
@@ -17,7 +17,7 @@ var nature = (function () {
 	};
 
 	var _render = function () {
-		matter.update(ctx, conf.mouse);
+		robot.update(ctx, conf.mouse);
 		if(conf.play)
 	    	requestAnimationFrame(_render);
 	};
@@ -41,11 +41,11 @@ var nature = (function () {
 	};
 
 	var _addObjectToNature = function(obj){
-		matter = obj;
+		robot = obj;
 	}
 
 	var _once = function(){
-		matter.init();
+		// robot.init();
 	}
 
 	var init = function (obj) {

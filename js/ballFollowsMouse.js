@@ -36,12 +36,9 @@ var ballFollowsMouse = (function(){
 			update = function(c, m){
 				display(c);
 				bounce(m);
-			},
-
-			once = function(){};
-
+			};
+			
 		return {
-			update: update,
-			init: once
+			update: update
 		}
 })()
