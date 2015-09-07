@@ -31,13 +31,18 @@
 		<div>
 			<button id="pause">Pause</button><button id="resume">Resume</button>
 		</div>
+		<!-- Vector Library - gl-matrix from Toji -->
+		<!-- TODO: write own vector library -->
 		<script src="/lib/vector.js"></script>
+		<!-- Micro Library which handles rendering and canvas creation  -->
+		<script src="/js/noc.js"></script>
+
+		<!-- Modules that can be passed to nature -->
 		<script src="/js/randomWalker.js"></script>
 		<script src="/js/ballBouncing.js"></script>
 		<script src="/js/ballFollowsMouse.js"></script>
-		<script src="/js/noc.js"></script>
+
 		<script>
-			// 
 			nature.beginWith(ballFollowsMouse);
 		</script>
 	</body>

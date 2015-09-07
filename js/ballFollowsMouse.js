@@ -15,7 +15,7 @@ var ballFollowsMouse = (function(){
 				vec2.set(mou, m[0], m[1]);
 				vec2.sub(acc, mou, loc);
 				vec2.normalize(acc, acc);
-				vec2.scale(acc, acc, 1);
+				vec2.scale(acc, acc, 0.5);
 				//
 				vec2.add(vel, vel, acc);
 				vec2.limit(vel, vel, 8);
