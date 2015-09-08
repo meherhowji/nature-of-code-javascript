@@ -17,6 +17,7 @@ var nature = (function () {
 	};
 
 	var _render = function () {
+		ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 		robot.update(ctx, conf.mouse);
 		if(conf.play)
 	    	requestAnimationFrame(_render);
