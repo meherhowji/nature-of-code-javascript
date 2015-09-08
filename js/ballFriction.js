@@ -2,18 +2,18 @@ var ballFriction = (function(){
 		var matter = [],
 		draw = function(c){
 			matter.forEach(function(v){
-				var gravity = vec2.fromValues(-0.2, 0.6 * v.mass),
-					wind = vec2.fromValues(0.05, 0),
-					fc = -1 * 0.1,
-					fn = 1,
-					frictionMag = fc * fn,
+				var gravity = vec2.fromValues(0, 0.6 * v.mass),
+					wind = vec2.fromValues(0.0, 0),
+					cx = -1 * 1,
+					n = 1,
+					frictionMag = cx * n,
 					friction = vec2.clone(v.velocity);
 
 				vec2.normalize(friction, friction);
 				vec2.multXY(friction, frictionMag)
 
 
-				v.applyForce(wind).applyForce(gravity);
+				v.applyForce(friction).applyForce(wind).applyForce(gravity);
 				v.show(c).bound().move();
 			})
 		},
