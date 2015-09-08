@@ -13,7 +13,7 @@ var nature = (function () {
 	    canvas.height = conf.screen_height;
 		document.body.appendChild(canvas);
 		ctx = canvas.getContext("2d");
-		ctx.translate(0.5, 0.5);
+		// ctx.translate(0.5, 0.5);
 	};
 
 	var _render = function () {
@@ -45,7 +45,7 @@ var nature = (function () {
 	}
 
 	var _once = function(){
-		// robot.init();
+		robot.init();
 	}
 
 	var init = function (obj) {

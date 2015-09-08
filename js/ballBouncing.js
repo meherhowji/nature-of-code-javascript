@@ -16,15 +16,16 @@ var ballBouncing = {
 	display: function(c){
 		c.clearRect(0, 0, window.innerWidth, window.innerHeight);
 		c.beginPath();
-		c.arc(this.x, this.y, 8, 0, 2 * Math.PI, false);
+		c.arc(this.x, this.y, 5, 0, 2 * Math.PI, false);
 		c.fillStyle = 'green';
 		c.fill();
-		c.lineWidth = 3;
+		c.lineWidth = 2;
 		c.strokeStyle = '#003300';
 		c.stroke();
 	},
 	update: function(c){
 		this.display(c);
 		this.bounce();
-	}
+	},
+	init: function(){};
 };
