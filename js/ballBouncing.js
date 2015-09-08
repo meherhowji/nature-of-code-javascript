@@ -27,5 +27,5 @@ var ballBouncing = {
 		this.display(c);
 		this.bounce();
 	},
-	init: function(){};
+	init: function(){}
 };
