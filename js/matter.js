@@ -26,7 +26,7 @@ function Matter(mass, pos, vel, acc){
         c.fillStyle = this.getColor();
         c.fill();
         c.lineWidth = 2;
-        c.strokeStyle = 'rgba(0,0,0,0.5)';
+        c.strokeStyle = 'rgba(0,0,0,0.2)';
         c.stroke();
 
         return this;
@@ -50,7 +50,7 @@ function Matter(mass, pos, vel, acc){
             if(awayX)
                 this.position[0] = window.innerWidth - this.mass;
             if(homeX)
-                this.position[0] = 0
+                this.position[0] = 0;
             vec2.multX(this.velocity, -1);
         }
 

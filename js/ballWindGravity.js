@@ -1,6 +1,6 @@
 var ballWindGravity = (function(){
 
-		var gravity = vec2.fromValues(0, 0.2),
+	var gravity = vec2.fromValues(0, 0.2),
 			wind = vec2.fromValues(0.5, 0),
 			mouseDown = 0,
 			matter = new Matter(1, [0, 0], [0, 0], [0.1, 0.02]),
@@ -31,5 +31,5 @@ var ballWindGravity = (function(){
 		return {
 			update: draw,
 			init: events
-		}
-})()
+		};
+})();

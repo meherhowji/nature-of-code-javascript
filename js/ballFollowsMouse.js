@@ -8,7 +8,7 @@ var ballFollowsMouse = (function(){
 			bounce = function(m){
 				//vec2.add(loc, loc, vel);
 				if(!m.length){
-					m[0] = m[1] = window.innerWidth/2
+					m[0] = m[1] = window.innerWidth / 2;
 				}
 
 				// console.log(m, loc, vel, acc)
@@ -37,8 +37,8 @@ var ballFollowsMouse = (function(){
 				display(c);
 				bounce(m);
 			};
-			
+
 		return {
 			update: update
-		}
-})()
+		};
+})();
