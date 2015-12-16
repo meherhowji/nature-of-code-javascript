@@ -1,7 +1,7 @@
 var ballBouncing = {
 	x: window.innerWidth/2,
 	y: window.innerHeight/2,
-	xSpeed: 3,
+	xSpeed: 8,
 	ySpeed: 1.5,
 	bounce: function(){
 		this.x += this.xSpeed;

@@ -18,7 +18,17 @@ var nature = (function () {
 		document.body.appendChild(canvas);
 		ctx = canvas.getContext("2d");
 		// translate to 0.5 to disable anitaliasing
-		ctx.translate(0.5, 0.5);
+		if (window.devicePixelRatio > 1) {
+		    var canvasWidth = canvas.width;
+		    var canvasHeight = canvas.height;
+		
+		    canvas.width = canvasWidth * window.devicePixelRatio;
+		    canvas.height = canvasHeight * window.devicePixelRatio;
+		    canvas.style.width = canvasWidth;
+		    canvas.style.height = canvasHeight;
+		
+		    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+		}
 	};
 
 	var _render = function () {
@@ -64,8 +74,8 @@ var nature = (function () {
 		_addObjectToNature(obj);
 		_addControls();
 		_createCanvas();
-		_render();
 		_once();
+		_render();
 	};
 
 	// expose the only public method

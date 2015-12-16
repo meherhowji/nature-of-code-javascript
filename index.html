@@ -2,6 +2,11 @@
 	<head>
 		<title>nature of code</title>
 		<style>
+			body{
+				background: #D3959B; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to left, #D3959B , #BFE6BA); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to left, #D3959B , #BFE6BA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			}
 			*{
 				box-sizing: border-box;
 				margin: 0;
@@ -47,9 +52,10 @@
 		<script src="/js/ballWindGravity.js"></script>
 		<script src="/js/ballFriction.js"></script>
 		<script src="/js/ballGravity.js"></script>
+		<script src="/js/ballGravitationField.js"></script>
 
 		<script>
-			nature.beginWith(ballFriction);
+			nature.beginWith(ballGravitationField);
 		</script>
 
 	</body>
