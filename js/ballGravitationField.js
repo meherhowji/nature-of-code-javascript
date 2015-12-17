@@ -4,26 +4,28 @@
 // Fix the field
 
 var ballGravitationField = (function(){
-    var earth, moon = [],
+    var moon = [],
     
     update = function(c){
-        
-        moon.forEach(function(v){
-          var gravity = earth.attract(v);
-          v.applyForce(gravity);
+        var gravity = [0,0];
+        moon.forEach(function(v) {
+          moon.forEach(function(k) {
+            if ( v !== k) {
+              gravity = k.attract(v);
+              v.applyForce(gravity);
+            }
+          })
           v.show(c).bound().move(); 
         });
-          
-        earth.show(c);
     },
 
     init = function(){
-        for(var i = 0; i < 150; i++){
-            var o = new Matter(randomF(1, 3), [random(50, 1080), random(50, 1080)], [0, 0], [0, 0]);
+        for(var i = 0; i < 2; i++){
+            var o = new Matter(randomF(1, 40), [random(400, window.innerWidth/2), random(400, window.innerHeight/2)], [0, 0], [0, 0]);
             moon.push(o);
         }
         
-        earth = new Attractor(10, [window.innerWidth/2 - 10, window.innerHeight/2 - 10]);
+        // earth = new Attractor(10, [window.innerWidth/2 - 10, window.innerHeight/2 - 10]);
     };
 
     return {
