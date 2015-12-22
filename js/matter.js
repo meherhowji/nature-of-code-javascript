@@ -8,9 +8,10 @@ function Matter(mass, pos, vel, acc){
     // this.randColor = Math.floor(Math.random() * 2);
     this.colors = ["#FFFFFF"];
     //gravity variables
-    this.G =  0.001;
+    this.G =  0.01;
     this.direction = vec2.create();
     this.attraction = vec2.create();
+    this.lifespan = 1;
     
 
     this.move = function(){
@@ -19,6 +20,7 @@ function Matter(mass, pos, vel, acc){
 
         vec2.limit(this.velocity, this.velocity, 10);
         vec2.multXY(this.acceleration, 0);
+        this.lifespan -= 0.01;
 
         return this;
     };
@@ -30,7 +32,7 @@ function Matter(mass, pos, vel, acc){
     this.show = function(c){
         c.beginPath();
         c.arc(this.position[0], this.position[1], this.mass/2, 0, 2 * Math.PI, false);
-        c.fillStyle = "rgba(255,255,255,0.4)";
+        c.fillStyle = "rgba(255,255,255," + this.lifespan + ")";
         c.fill();
 
         return this;

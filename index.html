@@ -42,6 +42,7 @@
 		<!-- Vector Library - gl-matrix from Toji -->
 		<!-- TODO: write own vector library -->
 		<script src="/lib/vector.js"></script>
+		<script src="/lib/pnoise.js"></script>
 
 		<!-- Micro Library which handles rendering, canvas & matter creation   -->
 		<script src="/js/noc.js"></script>
@@ -49,15 +50,17 @@
 
 		<!-- Modules that can be passed to nature -->
 		<script src="/js/randomWalker.js"></script>
+		<script src="/js/perlinWalker.js"></script>
 		<script src="/js/ballBouncing.js"></script>
 		<script src="/js/ballFollowsMouse.js"></script>
 		<script src="/js/ballWindGravity.js"></script>
 		<script src="/js/ballFriction.js"></script>
 		<script src="/js/ballGravity.js"></script>
 		<script src="/js/ballGravitationField.js"></script>
+		<script src="/js/particleSystem.js"></script>
 
 		<script>
-			nature.beginWith(ballGravitationField);
+			nature.beginWith(perlinWalker);
 		</script>
 
 	</body>

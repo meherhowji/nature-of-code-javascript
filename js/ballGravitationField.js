@@ -20,8 +20,8 @@ var ballGravitationField = (function(){
     },
 
     init = function(){
-        for(var i = 0; i < 2; i++){
-            var o = new Matter(randomF(1, 40), [random(400, window.innerWidth/2), random(400, window.innerHeight/2)], [0, 0], [0, 0]);
+        for(var i = 0; i < 20; i++){
+            var o = new Matter(randomF(1, 10), [random(0, window.innerWidth), random(0, window.innerHeight)], [0, 0], [0, 0]);
             moon.push(o);
         }
         
