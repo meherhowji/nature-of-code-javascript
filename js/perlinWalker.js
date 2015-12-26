@@ -1,8 +1,6 @@
 var perlinWalker = {
     x: window.innerWidth/2,
     y: window.innerHeight/2,
-    z: 0,
-    t: 0,
     move: function(){
         var stepX = noise(this.z);
             stepX = map(stepX, 0, 1, 0, window.innerWidth);
@@ -27,10 +25,9 @@ var perlinWalker = {
         c.stroke();
     },
     update: function(c){
-        this.display(c);
-        this.move()
+        return false;
     },
     init: function(){
-      return false;
+        this.display(c);
     }
 }

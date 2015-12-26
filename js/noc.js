@@ -15,24 +15,25 @@ var nature = (function () {
 		var canvas = document.createElement('canvas');
 	    canvas.width = conf.screen_width;
 	    canvas.height = conf.screen_height;
+			
 		document.body.appendChild(canvas);
 		ctx = canvas.getContext("2d");
-		// translate to 0.5 to disable anitaliasing
-		// if (window.devicePixelRatio > 1) {
-		//     var canvasWidth = canvas.width;
-		//     var canvasHeight = canvas.height;
-		// 
-		//     canvas.width = canvasWidth * window.devicePixelRatio;
-		//     canvas.height = canvasHeight * window.devicePixelRatio;
-		//     canvas.style.width = canvasWidth;
-		//     canvas.style.height = canvasHeight;
-		// 
-		//     ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-		// }
+		//translate to 0.5 to disable anitaliasing
+		if (window.devicePixelRatio > 1) {
+		    var canvasWidth = canvas.width;
+		    var canvasHeight = canvas.height;
+		
+		    canvas.width = canvasWidth * window.devicePixelRatio;
+		    canvas.height = canvasHeight * window.devicePixelRatio;
+		    canvas.style.width = canvasWidth;
+		    canvas.style.height = canvasHeight;
+		
+		    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+		}
 	};
 
 	var _render = function () {
-		ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+		// ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 		robot.update(ctx, conf.mouse);
 		if(conf.play)
 	    	requestAnimationFrame(_render);
@@ -64,7 +65,7 @@ var nature = (function () {
 
 	//a method that executes the objects' init method once
 	var _once = function(){
-		robot.init();
+		robot.init(ctx);
 	};
 
 	// the first method that is called
